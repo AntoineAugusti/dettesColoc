@@ -1,4 +1,4 @@
-dettesColoc
+enflat.me
 ===========
 
-Application pour gérer les dettes entre colocataires dans une colocation.
+est une application capable de gérer des tâches au sein d'une colocation : tâches ménagères, liste de courses, dettes entre colocataires.
