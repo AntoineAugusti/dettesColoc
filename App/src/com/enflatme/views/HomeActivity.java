@@ -16,17 +16,17 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.enflatme.R;
+import com.enflatme.webservices.RequestManager;
 import com.enflatme.webservices.Request;
-import com.enflatme.webservices.RequestName;
-import com.enflatme.webservices.WebServiceCaller;
+import com.enflatme.webservices.WebServiceObserver;
 import com.enflatme.webservices.Webservice;
 import com.enflatme.webservices.WebserviceBadConfigurationException;
 import com.enflatme.webservices.WebserviceNetworkIssueException;
 
-public class HomeActivity extends Activity implements WebServiceCaller {
+public class HomeActivity extends Activity implements WebServiceObserver {
 	TextView text;
 	TextView large;
-	Request task;
+	RequestManager task;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class HomeActivity extends Activity implements WebServiceCaller {
 	}
 
 	public void click(View view) {
-		Webservice service = new Webservice(this, RequestName.TEST);
+		Webservice service = new Webservice(this, Request.TEST);
 		try {
 			service.launch();
 		} catch (WebserviceBadConfigurationException e) {
