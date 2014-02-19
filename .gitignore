@@ -1,0 +1,7 @@
+App/bin
+*.class
+*.ap_
+*.aux
+*.log
+*.out
+*.toc
