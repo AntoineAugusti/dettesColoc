@@ -26,29 +26,35 @@ import java.util.Scanner;
 import android.os.AsyncTask;
 
 /**
- * <h1> Notice d'utilisation </h1>
- * <p> Il est toujours intéressant de savoir lorsqu'un processus de fond s'est terminé.
- * Pour cela on va implémenter le pattern Listener sur cette classe.
- * </p>
- * <p>
- * Néanmoins elle reste particulère. Si on cherche des données, on reçoit du JSON
- * Si on veut executer des modifications, on ne reçoit rien (un code d'erreur peut être ?)
- * Donc dans le second cas le champ result peut ne pas être utilisé.
- * </p>
+ * Permits to execute asyncTasks on URLS and get the result easyly and notify those who listen to it when the job is done
  * @author Etienne
  */
-public class RequestManager extends AsyncTask<String, Void, String> implements ThreadAlertDispatcher{
+public class RequestManager extends AsyncTask<String, Void, String> implements RequestDispatcher{
 	
 	// Pattern Listener
-	private ArrayList<ThreadAlertListener> listeners = new ArrayList<ThreadAlertListener>();
+	private ArrayList<RequestManagerListener> listeners = new ArrayList<RequestManagerListener>();
+	// The result that will be set if needed
 	private String result = null;
+	// The buffer that read the stream from the HTTP request
 	private BufferedInputStream is;
+	// The object that read the buffer
 	private Scanner scanner;
+	// The URL where the request will be sent
 	private URL targetURL;
+	// The HTTP méthode that will be used (essentially "POST" or "GET")
 	private String requestMethod;
+	// The parametres of the connection
 	private int connectionTimout;
 	private int readTimout;
 	
+	/**
+	 * Create a new Request that will be sent on the target url, using the http method and the timouts connection parameters
+	 * @param target the target URL on which the HTTP request will be done
+	 * @param method the HTTP method that will be use ("POST" or "GET)
+	 * @param connectionTimout
+	 * @param readTimout
+	 * @see RequestMethod
+	 */
 	public RequestManager(URL target, String method, int connectionTimout, int readTimout) {
 		super();
 		this.targetURL = target;
@@ -87,6 +93,10 @@ public class RequestManager extends AsyncTask<String, Void, String> implements T
 		}
 	}
 
+	@Override
+	protected void onPostExecute(String result) {
+		notifyListeners();
+	}
 	/**
 	 * Build the connection Object and configure it
 	 * @return the connection that will be use 
@@ -107,11 +117,13 @@ public class RequestManager extends AsyncTask<String, Void, String> implements T
 		return conn;
 	}
 
-	@Override
-	protected void onPostExecute(String result) {
-		notifyListeners();
-	}
 	
+	/**
+	 * Returns the result obtained by the HTTP request
+	 * <em> Be careful to use it only when the method triggerAlertReaction of the {@link RequestManagerListener} is called
+	 * @return the result of the http request
+	 * @throws NoResultFoundException if there was no result
+	 */
 	public String getResult() throws NoResultFoundException {
 		if (this.result == null)
 			throw new NoResultFoundException(
@@ -120,20 +132,18 @@ public class RequestManager extends AsyncTask<String, Void, String> implements T
 	}
 
 	/*
-	 *	Listeners 
+	 *	Pattern Listeners 
 	 */
 	@Override
 	public void notifyListeners() {
-		for (ThreadAlertListener listener : this.listeners) {
+		for (RequestManagerListener listener : this.listeners) {
 			listener.triggerRequestReaction();
 		}
 	}
-
 	@Override
-	public void addListener(ThreadAlertListener listener) {
+	public void addListener(RequestManagerListener listener) {
 		this.listeners.add(listener);
 	}
-
 	@Override
 	public void clearListeners() {
 		this.listeners.clear();

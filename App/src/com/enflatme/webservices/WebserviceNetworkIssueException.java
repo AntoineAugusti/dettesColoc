@@ -1,7 +1,7 @@
 package com.enflatme.webservices;
 
 /**
- * Exception lancé lorsqu'on tente de faire un opération en ligne alors que le device n'est pas connecté à Internet
+ * Exception throw whe you try to do an operation online whereas the device is not connected to the Internet
  * @author etienne
  *
  */

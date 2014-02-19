@@ -6,52 +6,70 @@ import java.net.URL;
 import android.content.Context;
 import android.net.ConnectivityManager;
 
-import com.enflatme.WebServiceCaller;
-
-public class Webservice implements URLBuilder, ThreadAlertListener {
+/**
+ * This class permits to make our database operations easier and do it in background
+ * @author Etienne
+ * TODO : Enable to cancel the service
+ */
+public class Webservice implements URLBuilder, RequestManagerListener {
 	/*
-	 *	Variables de classe
+	 *	Class variable
+	 */
+	/**
+	 * The conection timout default value
 	 */
 	public static final int defaultConnectTimout = 15000;  /* milliseconds */
+	/**
+	 * The read timout default value
+	 */
 	public static final int defaultReadTimout = 10000;
 	
 	/*
 	 * Variable d'instance
 	 */
-	/**
-	 * The WebserviceCaller that created the WebService
-	 */
-	private WebServiceCaller caller;
+	// The WebserviceCaller that created the WebService
+	private WebServiceObserver observer;
+	// The connection timout that can be set
 	private int connectTimout = defaultConnectTimout;
+	// The read timout that can be set
 	private int readTimout = defaultReadTimout;
-	/**
-	 * The RequestName that need to be thrown
-	 */
-	private RequestName requestName;
-	/**
-	 * The Request object that will run in background
-	 */
+	// The Request that need to be executed
 	private Request request;
-	/**
-	 * The url for the connection
-	 */
+	// The Request object that will run in background
+	private RequestManager requestManager;
+	// The url for the connection
 	private URL url;
 	
 	/*
 	 * Constructeurs
 	 */
-	public Webservice(WebServiceCaller caller) {
-		this.caller = caller;
+	/**
+	 * Creates an new Webservice observed by and {@link WebServiceObserver}
+	 * <em>Don't forget to set the request to avoid {@link WebserviceBadConfigurationException}</em>
+	 * @param observer the object that stares at the Webservice (generally the object that called the webservice)
+	 * 
+	 */
+	public Webservice(WebServiceObserver observer) {
+		this.observer = observer;
 	}
 	
-	public Webservice(WebServiceCaller caller, RequestName requestName) {
-		this.caller = caller;
-		this.requestName = requestName;
+	/**
+	 * @see Webservice#Webservice(WebServiceObserver)
+	 * @param request the request that will be executed
+	 */
+	public Webservice(WebServiceObserver caller, Request request) {
+		this.observer = caller;
+		this.request = request;
 	}
 	
-	public Webservice(WebServiceCaller caller, RequestName requestName, int connectionTimout, int readTimout) {
-		this.caller = caller;
-		this.requestName = requestName;
+	/**
+	 * @see Webservice#Webservice(WebServiceObserver, Request)
+	 * @param connectionTimout the connection timout that will configure the connection
+	 * @param readTimout the read timout that waill configure the connection
+	 */
+	public Webservice(WebServiceObserver caller, Request requestName, int connectionTimout, int readTimout) {
+		this.observer = caller;
+		this.request = requestName;
 		this.connectTimout = connectionTimout;
 		this.readTimout = readTimout;
 	}
@@ -65,18 +83,18 @@ public class Webservice implements URLBuilder, ThreadAlertListener {
 	 * @throws WebserviceNetworkIssueException If the Webservice cannot detect an Internet connection
 	 */
 	public void launch() throws WebserviceBadConfigurationException, WebserviceNetworkIssueException {
-		if (this.requestName == null)
+		if (this.request == null)
 			throw new WebserviceBadConfigurationException("Missing RequestName");
 		
-		ConnectivityManager connMgr = (ConnectivityManager) caller.getCallerContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager connMgr = (ConnectivityManager) observer.getCallerContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 		if (connMgr.getActiveNetworkInfo() == null && !connMgr.getActiveNetworkInfo().isConnected())
 			throw new WebserviceNetworkIssueException("Device not connected to the INTERNEEEET");
 		
 		try {
-			url = urlBuilder(requestName);
-			request = new Request(url, requestName.method.toString(), connectTimout, readTimout);
-			request.addListener(this);
-			request.execute("");
+			url = urlBuilder(request);
+			requestManager = new RequestManager(url, request.method.toString(), connectTimout, readTimout);
+			requestManager.addListener(this);
+			requestManager.execute("");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -85,8 +103,8 @@ public class Webservice implements URLBuilder, ThreadAlertListener {
 	/*
 	 * Accesseurs
 	 */
-	public void setRequestName(RequestName requestName) {
-		this.requestName = requestName;
+	public void setRequestName(Request requestName) {
+		this.request = requestName;
 	}
 	public void setConnexionTimout(int timout) {
 		this.connectTimout = timout;
@@ -99,19 +117,26 @@ public class Webservice implements URLBuilder, ThreadAlertListener {
 		this.readTimout = defaultReadTimout;
 	}
 
+	/**
+	 * Implementation of URLBuilder
+	 * Will see be removed
+	 */
 	@Override
-	public URL urlBuilder(RequestName requestName) throws MalformedURLException {
+	public URL urlBuilder(Request requestName) throws MalformedURLException {
 		return new URL(URLSOURCE+requestName.toString());
 	}
 
+	/**
+	 * Implementation of WebServiceCaller
+	 */
 	@Override
 	public void triggerRequestReaction() {
 		try {
-			String result = this.request.getResult();
-			this.caller.loadResult(result);
+			String result = this.requestManager.getResult();
+			this.observer.loadResult(result);
 		} catch (NoResultFoundException e) {
 			e.printStackTrace();
-			this.caller.loadResult(null);
+			this.observer.loadResult(null);
 		}
 	}
 }
