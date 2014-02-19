@@ -54,6 +54,7 @@ public class LoginActivity extends Activity {
 		// On gère le resize avec le fullscreen
 		getWindow().addFlags(
 				WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+
 		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
@@ -78,7 +79,6 @@ public class LoginActivity extends Activity {
 			});
 			builder.create();
 			builder.show();
-		}
-			
+		}	
 	}
 }
