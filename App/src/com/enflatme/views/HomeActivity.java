@@ -16,15 +16,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.enflatme.R;
-import com.enflatme.R.id;
-import com.enflatme.R.layout;
-import com.enflatme.R.menu;
-import com.enflatme.R.string;
 import com.enflatme.webservices.Request;
 import com.enflatme.webservices.RequestName;
 import com.enflatme.webservices.WebServiceCaller;
 import com.enflatme.webservices.Webservice;
-import com.enflatme.webservices.WebserviceBadConfigurationException;
 import com.enflatme.webservices.WebserviceNetworkIssueException;
 
 public class HomeActivity extends Activity implements WebServiceCaller {

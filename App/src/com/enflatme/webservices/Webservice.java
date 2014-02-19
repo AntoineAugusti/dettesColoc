@@ -6,6 +6,7 @@ import java.net.URL;
 import android.content.Context;
 import android.net.ConnectivityManager;
 
+import com.enflatme.WebServiceCaller;
 
 public class Webservice implements URLBuilder, ThreadAlertListener {
 	/*
