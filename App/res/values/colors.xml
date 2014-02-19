@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- NATIVES -->
+    <color name="main_color">#2ecc71</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="random">#123456</color>
+    <color name="red">#e74c3c</color>
+    <color name="blue">#34495e</color>
+    
+</resources>

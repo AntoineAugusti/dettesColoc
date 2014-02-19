@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a">connecté</string>
+    <string name="b">non connecté</string>
+    
+    <string name="app_name">Enflatme</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity_login_et_mail_hint">Write your email address!</string>
+    <string name="activity_login_et_pwd_hint">Write your password!</string>
+    <string name="activity_login_et_new_pwd_hint">Choose your password!</string>
+    <string name="activity_login_et_conf_pwd_hint">Confirm your password!</string>
+    <string name="activity_login_btn_login">Log in</string>
+    <string name="activity_login_btn_signup">Sign up!</string>
+    <string name="activity_login_t_equal_pwd">Well-done! Now you\'re ready to go.</string>
+    <string name="activity_login_t_unequal_pwd">Mmh.. It seems the passwords aren\'t the same.</string>
+    <string name="dialog_missing_pwd">You cannot have an empty password</string>
+    <string name="dialog_missing_pwd_title">Empty password</string>
+    <string name="dialog_missing_pwd_ok_btn">Ok</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
