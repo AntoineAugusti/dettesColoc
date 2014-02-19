@@ -1,7 +1,14 @@
 App/bin
+App/assets
+App/gen
+proguard-project.txt
 *.class
 *.ap_
-*.aux
-*.log
-*.out
+.classpath
+.project
+.settings
+
+*.aux 
+*.log 
+*.out 
 *.toc
