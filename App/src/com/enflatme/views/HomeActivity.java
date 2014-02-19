@@ -20,6 +20,7 @@ import com.enflatme.webservices.Request;
 import com.enflatme.webservices.RequestName;
 import com.enflatme.webservices.WebServiceCaller;
 import com.enflatme.webservices.Webservice;
+import com.enflatme.webservices.WebserviceBadConfigurationException;
 import com.enflatme.webservices.WebserviceNetworkIssueException;
 
 public class HomeActivity extends Activity implements WebServiceCaller {
