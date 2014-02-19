@@ -1,6 +1,7 @@
 App/bin
 App/assets
 App/gen
+App/libs
 proguard-project.txt
 *.class
 *.ap_
