@@ -11,6 +11,8 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{xspace}
+\usepackage{longtable}
+\usepackage{array}
 
 %% -- Commandes personalisées
 
@@ -19,7 +21,7 @@
 % Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
 \newcommand{\nomEquipe}{teamflat\xspace}
 % Le type de document rédigé
-\newcommand{\nomDocument}{Remue-méninges}
+\newcommand{\nomDocument}{Remue-méninge}
 
 \pagestyle{fancy}
 % En-têtes
@@ -33,11 +35,13 @@
 \fancyfoot[L]{\nomEquipe\xspace G1}
 \fancyfoot[R]{Page \thepage\xspace sur \pageref{LastPage}}
 
+\renewcommand{\arraystretch}{1.2}
+
 %% -- Document
 \begin{document}
 	\begin{titlepage}
 		\begin{center}
-			\LARGE{\bsc{Fiche d'initialisation}} \\
+			\LARGE{\bsc{Remue-méninge}} \\
 		    \rule{\linewidth}{1.5pt}
 		    \huge{\textbf{\nomProjet}}
 		    \rule{\linewidth}{1.5pt} \newline{} \newline{}
@@ -50,27 +54,59 @@
 			\large{Date de publication :}\\ \today
 		\end{center}
 	\end{titlepage}
-	\newpage
-
-	% Table des matières
-	\tableofcontents
-	\pagebreak
 
 	% Début du document
-	\section{Nom de l'équipe}
-	Notre équipe se nommera \nomEquipe.
+	\section{Contexte}
+	Cette séance de remue-méninge s'est déroulée le vendredi 14 mars 2014 avec les équipes teamflat et .
 
-	\section{Liste des membres de l'équipe}
-	Notre équipe sera composée des personnes suivantes :
-	\begin{itemize}
-		\item Antoine Augusti
-		\item Étienne Batise
-		\item Thibaud Dauce 
-	\end{itemize}
+	\section{Liste d'idées}
+	Retrouvez ci-dessous la liste des idées brutes que nous avons abordé durant cette séance.
 
-	\section{Nom du service}
-	Le service que nous souhaitons réaliser dans le cadre de ce cours se nomme \nomProjet.
-
-	\section{Notre concept}
-	\nomProjet est une application capable de gérer des tâches au sein d'une colocation : tâches ménagères, liste de courses, dettes entre colocataires\dots
+	\begin{longtable}{|l|c|}
+ 	\hline
+  	ID de l'idée & Texte de l'idée \\ \hline
+  	\hline
+  	1 &  Sous (argent) \\ \hline
+  	2 &  Tâches ménagères \\ \hline
+  	3 &  Plan de frigidaire \\ \hline
+  	4 &  Loyer \\ \hline
+  	5 &  Courses \\ \hline
+  	6 &  Calendrier \\ \hline
+  	7 &  Vaisselle \\ \hline
+  	8 &  Facture (consommation eau et électricité) \\ \hline
+  	9 &  Gestion des lessives \\ \hline
+  	10 &  Nettoyage de vomi \\ \hline
+  	11 & Gestion des voitures \\ \hline
+  	12 & Changement de colocation (personne) \\ \hline
+  	13 & Changement de colocation (adresse) \\ \hline
+  	14 & Règlements / Commandements \\ \hline
+  	15 & Pourcentage de peau visible en fonction du sexe \\ \hline
+  	16 & Gestion des clés \\ \hline
+  	17 & Partage de fichiers \\ \hline
+  	18 & Gestion du courrier \\ \hline
+  	19 & Gestion des poubelles \\ \hline
+  	20 & Heure de repos / de salle de bain / de baise \\ \hline
+  	11 & Couvre-feu / couvre-chef \\ \hline
+  	12 & Organisation de soirées \\ \hline
+  	13 & Liste noire (personnes interdites) \\ \hline
+  	14 & Statistiques \\ \hline
+  	15 & Citations cultes \\ \hline
+  	16 & Jeux entre colocataires \\ \hline
+  	17 & \textit{Achievements} \\ \hline
+  	18 & Stock de capotes / de pilules du lendemain \\ \hline
+  	19 & Communications inter-colocations \\ \hline
+  	30 & Défis inter-colocations \\ \hline
+  	31 & \textit{Couch-surfing} \\ \hline
+  	32 & Objets trouvés / perdus \\ \hline
+  	33 & Gestion des meubles achetés \\ \hline
+  	34 & Gestion des gestionnaires \\ \hline
+  	35 & Kikifélabouffe \texttrademark\\ \hline
+  	36 & Gestion de l'alcool\\ \hline
+  	37 & Gestion du son\\ \hline
+  	38 & Alertes générales (visites impromptues)\\ \hline
+  	39 & Numéros d'urgence\\ \hline
+  	40 & Carnet d'adresses\\ \hline
+  	41 & Carnet de santé\\ \hline
+  	42 & Sélection de films\\ \hline
+	\end{longtable}
 \end{document}
