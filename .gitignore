@@ -13,3 +13,5 @@ proguard-project.txt
 *.log 
 *.out 
 *.toc
+*.sublime-project
+*.sublime-workspace

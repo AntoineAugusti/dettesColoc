@@ -1,0 +1,125 @@
+\documentclass[a4paper, 12pt, french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[babel=true]{csquotes}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xspace}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{geometry}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.75in}
+
+%% -- Commandes personalisées
+
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomProjet}{enflatme\xspace}
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomEquipe}{teamflat\xspace}
+% Le type de document rédigé
+\newcommand{\nomDocument}{Grille de Levesque}
+
+\pagestyle{fancy}
+% En-têtes
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[C]{\nomProjet} 
+\fancyhead[L]{\nomDocument}
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[C]{Version 1.0} 
+\fancyfoot[L]{\nomEquipe\xspace G1}
+\fancyfoot[R]{Page \thepage\xspace sur \pageref{LastPage}}
+
+\renewcommand{\arraystretch}{1.1}
+
+%% -- Document
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\LARGE{\bsc{Grille de Levesque}} \\
+		    \rule{\linewidth}{1.5pt}
+		    \huge{\textbf{\nomProjet}}
+		    \rule{\linewidth}{1.5pt} \newline{} \newline{}
+		\end{center}
+		\begin{center}
+		    \large{Auteurs :}\\ Antoine \bsc{Augusti} (ANT)\\ Étienne \bsc{Batise} (BAT) \\ Thibaud \bsc{Dauce} (TIB)
+		\end{center}
+		\vspace{50px}
+		\begin{center}
+			\large{Date de publication :}\\ \today
+		\end{center}
+	\end{titlepage}
+
+	% Début du document
+  \section{Contexte}
+  L'objectif de ce document est de présenter la grille de Levesque de notre projet. Celle-ci fait suite à la séance de remue-méninge que nous avons effectuée le 14 février 2014. Au cours de cette séance, nous avons abordé énormément de besoins et d'opportunités que pourraient amener notre projet. Ainsi nous avons dû modifier notre liste  d'idées brutes et rajouter quelques idées pour établir une grille cohérente.
+
+	\section{Grille de Levesque}
+	L'objectif principal retenu est d'\textbf{améliorer la vie des colocataires}.
+  Les idées non présentes dans la liste des idées brutes possèdent un identifiant alphabétique, celles possédant un identifiant numérique reprennent l'identifiant de la liste des idées brutes du remue-méninge.
+
+  \scriptsize
+	\begin{longtable}{|l|c|c|c|c|c|c|c|}
+ 	\hline
+  	ID de l'idée & Fait / Donnée / Observation & Symptôme & Problème & Besoin & Objectif & Opportunité & Solution \\ \hline
+  	\hline
+    1 &  Gestion des dettes & & & \checkmark & & & \\ \hline
+    2 &  Suivi des tâches ménagères & & & & & & B \\ \hline
+    3 &  Plan de frigidaire & & & \checkmark & & & \\ \hline
+    4 &  Paiement du loyer & & & \checkmark & & & \\ \hline
+    5 &  Liste des courses & & & & & & D\\ \hline
+    6 &  Calendrier & & & & & \checkmark & \\ \hline
+    7 &  Vaisselle & & & & & & B\\ \hline
+    8 &  Facture (consommation eau et électricité) & & & \checkmark & & & \\ \hline
+    9 &  Gestion des lessives & & & & & & E\\ \hline
+    11 & Gestion des voitures & & & C & & & \\ \hline
+    12 & Changement de colocation (personne) & & & & & \checkmark & \\ \hline
+    13 & Changement de colocation (adresse) & & & & & \checkmark & \\ \hline
+    14 & Règlements / Commandements & & & \checkmark & & & \\ \hline
+    16 & Gestion des clés & & & \checkmark & & & \\ \hline
+    17 & Partage de fichiers & & & & & \checkmark & \\ \hline
+    18 & Gestion du courrier & & & \checkmark & & & \\ \hline
+    19 & Gestion des poubelles & & & \checkmark & & & \\ \hline
+    20 & Heure de repos / de SDB\footnote{SDB : salle de bain.} / de baise & & & E & & & \checkmark \\ \hline
+    21 & Bruits tardifs & E & & & & & \\ \hline
+    22 & Organisation de soirées & & & \checkmark & & & \\ \hline
+    23 & Liste noire (personnes interdites) & & & \checkmark & & & \\ \hline
+    24 & Mise en place de statistiques & & & & & \checkmark & \\ \hline
+    25 & Citations cultes & & & & & \checkmark & \\ \hline
+    26 & Jeux entre colocataires & & & & & \checkmark & \\ \hline
+    27 & \textit{Achievements} & & & & & \checkmark & \\ \hline
+    28 & Stock de capotes / de pilules & & & \checkmark & & & \\ \hline
+    29 & Communications inter-colocations & & & & & \checkmark & \\ \hline
+    30 & Défis inter-colocations & & & & & \checkmark & \\ \hline
+    31 & \textit{Couch-surfing} & & & & & \checkmark & \\ \hline
+    32 & Objets trouvés / perdus & & & & & & C \\ \hline
+    33 & Gestion des meubles achetés & & & C & & & \\ \hline
+    35 & Kikifélabouffe \texttrademark& & & B & & & \\ \hline
+    36 & Gestion de l'alcool& & & & & & D\\ \hline
+    37 & Gestion du son& & & E & & & \\ \hline
+    38 & Alertes générales (visites impromptues)& & & \checkmark & & & \\ \hline
+    39 & Numéros d'urgence& & & \checkmark & & & \\ \hline
+    40 & Carnet d'adresses& & & & & \checkmark & \\ \hline
+    41 & Carnet de santé& & & \checkmark & & & \\ \hline
+    42 & Sélection de films& & & E & & & \\ \hline
+    A &  \textbf{Améliorer la vie des colocataires} & & & & \checkmark & & \\ \hline
+    B &  Les tâches sont mal réparties & & \checkmark & & & & \\ \hline
+    C &  Chacun possède ses biens & & \checkmark & & & & \\ \hline
+    D &  Il manque parfois des consommables & & \checkmark & & & & \\ \hline
+    E & Les loisirs des uns embêtent les autres & & \checkmark & & & & \\ \hline
+	\end{longtable}
+\end{document}
