@@ -5,6 +5,7 @@ package com.enflatme.webservices;
  * @author etienne
  *
  */
+@SuppressWarnings("serial")
 public class WebserviceNetworkIssueException extends Exception {
 
 	public WebserviceNetworkIssueException() {
