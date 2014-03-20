@@ -1,0 +1,73 @@
+\documentclass[a4paper, 12pt, french, landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[babel=true]{csquotes}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xspace}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{geometry}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.5in}
+\addtolength{\leftmargin}{-10in}
+\addtolength{\textheight}{1.75in}
+
+%% -- Commandes personalisées
+
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomProjet}{enflatme\xspace}
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomEquipe}{teamflat\xspace}
+% Le type de document rédigé
+\newcommand{\nomDocument}{Éxigences qualifiées annexe}
+
+\pagestyle{fancy}
+% En-têtes
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[C]{\nomProjet} 
+\fancyhead[L]{\nomDocument}
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[C]{Version 1.0} 
+\fancyfoot[L]{\nomEquipe\xspace G1}
+\fancyfoot[R]{Page \thepage\xspace sur \pageref{LastPage}}
+
+%% -- Document
+\begin{document}
+
+    \section{Exigence 13 : utilisable hors ligne}
+
+    \paragraph{Critère de satisfaction}
+    L'application devrait, au minimum, pouvoir afficher les données de la coloc hors ligne. Au mieux, l'utilisateur peut mettre à jour des informations hors ligne qui seront propoagées sur le serveur dès que le téléphone trouve un réseau.
+
+    \paragraph{Contentement du MAO}
+    4
+
+    \paragraph{Mécontentement du MAO}
+    2
+
+    \section{Exigence 14 : limiter les téléchargements}
+
+    \paragraph{Critère de satisfaction}
+    Si l'application est une page Web, le poids de la page ne doit pas dépasser les 200ko. Dans le cas d'une application native, les données téléchargées à chaque chargement ne doivent pas exceder 100ko.
+
+    \paragraph{Contentement du MAO}
+    5
+
+    \paragraph{Mécontentement du MAO}
+    4
+
+\end{document}
