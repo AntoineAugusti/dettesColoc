@@ -9,9 +9,9 @@ proguard-project.txt
 .project
 .settings
 
-*.aux 
-*.log 
-*.out 
+*.aux
+*.log
+*.out
 *.toc
 *.sublime-project
 *.sublime-workspace
