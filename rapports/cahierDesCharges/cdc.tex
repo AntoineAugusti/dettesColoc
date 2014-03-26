@@ -1,0 +1,82 @@
+\documentclass[a4paper, 12pt, french]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[babel=true]{csquotes}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xspace}
+\usepackage{geometry}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.75in}
+%% -- Commandes personalisées
+
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomProjet}{enflatme\xspace}
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomEquipe}{teamflat\xspace}
+
+\pagestyle{fancy}
+% En-têtes
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[C]{\nomProjet} 
+\fancyhead[L]{Cahier des charges}
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[C]{Version 1.0} 
+\fancyfoot[L]{\nomEquipe\xspace G1}
+\fancyfoot[R]{Page \thepage\xspace sur \pageref{LastPage}}
+
+%% -- Document
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\LARGE{\bsc{Cahier des charges}} \\
+		    \rule{\linewidth}{1.5pt}
+		    \huge{\textbf{\nomProjet}}
+		    \rule{\linewidth}{1.5pt} \newline{} \newline{}
+		\end{center}
+		\begin{center}
+		    \large{Auteurs :}\\ Antoine \bsc{Augusti} (ANT)\\ Étienne \bsc{Batise} (BAT) \\ Thibaud \bsc{Dauce} (TIB)
+		\end{center}
+		\vspace{50px}
+		\begin{center}
+			\large{Date de publication :}\\ \today
+		\end{center}
+	\end{titlepage}
+	\newpage
+
+	% Table des matières
+	\tableofcontents
+	\pagebreak
+
+	% Début du document
+	\chapter{Fondements du projet}
+		\section{But du projet}
+			\input{textes/butProjet}
+
+		\section{Personnes et organismes impliqués dans les enjeux du projet}
+			\input{textes/personnesImpliquees}
+
+		\section{Utilisateurs du produit}
+			\input{textes/utilisateursProduit}
+
+	\chapter{Contraintes sur le projet}
+	\chapter{Exigences fonctionnelles}
+	\chapter{Exigences non fonctionnelles}
+		\section{Ergonomie et convivialité du produit}
+			\input{textes/ergonomie}
+
+		\section{Facilité d'utilisation et facteurs humains}
+			\input{textes/faciliteUtilisation}
+\end{document}
