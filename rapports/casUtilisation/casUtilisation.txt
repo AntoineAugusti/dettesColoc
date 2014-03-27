@@ -2,6 +2,7 @@
 title Modèle d'usage\n <b>enflatme</b>
 left to right direction
 skinparam packageStyle rect
+skinparam shadowing false
 
 actor Visiteur as visiteur
 actor Colocataire as coloc
