@@ -1,0 +1,43 @@
+Questions posées à la MOA.
+
+BAT : Y-a-t-il besoin d'un éditeur de texte ? Des documents ?
+Éditer des plannings, sans devoir télécharger une nouvelle version du document à chaque changement. Il y a également besoin de pouvoir annoter le planning. Des sortes de notes.
+
+ANT : Qui sont vraiment les acteurs du BDE ? Seulement les orgas ?
+Les orgas en général, même si certains ne sont pas des orgas officiels du BDE. Environ une 60aine de personnes. Avec des droits à définir pour chacun.
+
+TIB : Quel est le niveau de compétence des utilisateurs ?
+Des utilisateurs ayant des connaissances basiques en informatique, en aucun cas des informaticiens.
+
+TIB : Besoin d'un graphisme spécial ?
+On a du mal à avoir des orgas, donc il faut quelque chose de simple et attractif pour pouvoir recruter des organisateurs. Simple, mais pas laid. Assez simple d'utilisation et clair. En respectant les couleurs habituelles du BDE, la charte graphique du BDE (en particulier pour le logo).
+
+BAT : Rapidité de l'application ? Temps réel pour l'édition des documents ?
+Fluide. Pas de rechargement de page lorsqu'il y a des modifications. L'utilisateur ne doit pas avoir à recharger pour mettre à jour. On peut notifier qu'une autre personne accède au même document et indiquer qu'il sera mis à jour quand l'autre aura terminé.
+
+BAT : Besoin d'apprentissage pour prendre en main l'application ?
+Tous les utilisateurs doivent être formés pendant 10 minutes. Même si l'application doit être la plus claire possible.
+
+ANT : Application seulement Android ? Pourquoi pas une application web ?
+Oui, seulement Android. On voulait minimiser le nombre de clics pour l'utilisation.
+
+BAT : Distribution sur Play Store ?
+Non, distribution en interne.
+
+BAT : Quel niveau d'information par personne ?
+Nom, prénom, son rang dans l'association, un numéro de téléphone, adresse e-mail.
+
+TIB : Pas d'inscription ? Seulement une connexion ? Qui rentre les informations d'un nouvel utilisateur ?
+L'administrateur crée le compte et remplit les informations du nouvel utilisateur.
+
+ANT : Qu'est-ce qu'on doit retrouver que vous stockez déjà en BD ?
+La liste des adhérents.
+
+ANT : Vous avez quoi en BD actuellement ?
+La liste des adhérents, la liste de stocks et des éléments de trésorerie.
+
+BAT : Application distribuée en interne. Comment vous la distribuez ?
+On peut proposer de télécharger l'application sur GBDE (le système de gestion du BDE).
+
+ANT : Quels cas d'usage pourraient-on développer en priorité ?
+Inscription par l'administrateur, connexion, système de droits. 
