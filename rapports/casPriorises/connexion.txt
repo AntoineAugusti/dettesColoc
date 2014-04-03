@@ -4,18 +4,23 @@ left to right direction
 skinparam packageStyle rect
 skinparam shadowing false
 
-actor Visiteur as visiteur
+actor :Nouveau membre: as nouveau
+actor Membre as membre
 
 rectangle connexion {
 	(Afficher formulaire) as afficher
 	(Afficher résultat) as resultat
 	(Afficher échec) as echec
 	(Afficher succès) as succes
+	(Définir mot de passe) as definir
 
 	echec .> resultat : extends
 	succes ..> resultat : extends
+	definir ..> succes : includes
 
-	visiteur --> afficher
-	visiteur --> resultat
+	nouveau --> afficher
+	membre --> afficher
+	membre --> resultat
+	nouveau --> definir
 }
 @enduml

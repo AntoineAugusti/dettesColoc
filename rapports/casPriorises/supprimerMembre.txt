@@ -1,0 +1,18 @@
+@startuml
+title Modèle d'usage\n <b>enflatme</b>
+left to right direction
+skinparam packageStyle rect
+skinparam shadowing false
+
+actor Administrateur as administrateur
+
+rectangle supprimerMembre {
+	(Afficher membres) as afficher
+	(Choisir membre à supprimer) as choisir
+	(Confirmer suppression) as confirmer
+
+	administrateur --> afficher
+	administrateur --> choisir
+	administrateur --> confirmer
+}
+@enduml
