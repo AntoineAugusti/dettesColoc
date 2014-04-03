@@ -5,32 +5,25 @@ skinparam packageStyle rect
 skinparam shadowing false
 
 actor Visiteur as visiteur
-actor Colocataire as coloc
-actor :Responsable de la colocation: as respColoc
-coloc <|-- respColoc
+actor :Serveur mail: as mail
 
 rectangle application {
-	(S'inscrire) as inscription
-	(Afficher la colocation) as afficher
-	(Modifier la colocation) as modifier
-	(Administrer la colocation) as administrer
-	(Modifier des tâches) as modifierTaches
+	(Affichier formulaire) as afficher
+	(Envoyer mail) as envoyer
+	(Vérifier adresse mail) as verifier
+	(Entrer code de vérification) as code
+	(Visiter l'url spécial de vérification) as url
 
-	(Créer une colocation) .> administrer : extends
-	(Supprimer une colocation) ..> administrer : extends
-	(Ajouter des tâches) ..> administrer : extends
-	(Supprimer des tâches) ..> administrer : extends
+	code .> verifier : extends
+	url ..> verifier : extends
 
-	(Marquer une tâche commme complétée) .> modifier : extends
-	modifierTaches ..> modifier : extends
 	note right of modifierTaches
 		Exemple : indiquer qu'une tâche
 		ménagère a été effectuée.
 	end note
 
-	visiteur --> inscription
-	coloc --> afficher
-	coloc --> modifier
-	respColoc -> administrer
+	visiteur --> afficher
+	mail --> envoyer
+	visiteur --> verifier
 }
 @enduml
