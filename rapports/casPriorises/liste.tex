@@ -1,0 +1,100 @@
+\documentclass[a4paper, 12pt, french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[babel=true]{csquotes}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xspace}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{geometry}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.75in}
+%% -- Commandes personalisées
+
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomProjet}{enflatme\xspace}
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomEquipe}{teamflat\xspace}
+
+\pagestyle{fancy}
+% En-têtes
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[C]{\nomProjet} 
+\fancyhead[L]{Compte-rendu de la réunion avec la MOA}
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[C]{Version 1.0} 
+\fancyfoot[L]{\nomEquipe\xspace G1}
+\fancyfoot[R]{Page \thepage\xspace sur \pageref{LastPage}}
+
+\newcommand{\retourLigne}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+%% -- Document
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\LARGE{\bsc{Liste des cas d'utilisation}} \\
+		    \rule{\linewidth}{1.5pt}
+		    \huge{\textbf{\nomProjet}}
+		    \rule{\linewidth}{1.5pt} \newline{} \newline{}
+		\end{center}
+		\begin{center}
+		    \large{Auteurs :}\\ Antoine \bsc{Augusti} (ANT)\\ Étienne \bsc{Batise} (BAT) \\ Thibaud \bsc{Dauce} (TIB)
+		\end{center}
+		\vspace{50px}
+		\begin{center}
+			\large{Date de publication :}\\ \today
+		\end{center}
+	\end{titlepage}
+	\newpage
+
+	\section{Ajouter Un membre}
+	\begin{longtable}{|c|l|l|}
+ 	\hline
+    1 & \retourLigne{ID}  & \retourLigne{obd01} \\ \hline
+  	\hline
+    2 & \retourLigne{Titre}  & \retourLigne{Ajouter un membre} \\ \hline
+    3 & \retourLigne{Priorité}  & \retourLigne{1} \\ \hline
+    4 & \retourLigne{Antécédents}  & \retourLigne{} \\ \hline
+    5 & \retourLigne{Format}  & \retourLigne{A} \\ \hline
+    6 & \retourLigne{Maquette}  & \retourLigne{1} \\ \hline
+	\end{longtable}
+
+	\section{Supprimer un membre}
+	\begin{longtable}{|c|l|l|}
+ 	\hline
+    1 & \retourLigne{ID}  & \retourLigne{obd02} \\ \hline
+  	\hline
+    2 & \retourLigne{Titre}  & \retourLigne{Supprimer un membre} \\ \hline
+    3 & \retourLigne{Priorité}  & \retourLigne{1} \\ \hline
+    4 & \retourLigne{Antécédents}  & \retourLigne{obd01} \\ \hline
+    5 & \retourLigne{Format}  & \retourLigne{A} \\ \hline
+    6 & \retourLigne{Maquette}  & \retourLigne{1} \\ \hline
+	\end{longtable}
+
+
+	\section{Connexion}
+	\begin{longtable}{|c|l|l|}
+ 	\hline
+    1 & \retourLigne{ID}  & \retourLigne{obd03} \\ \hline
+  	\hline
+    2 & \retourLigne{Titre}  & \retourLigne{Connexion} \\ \hline
+    3 & \retourLigne{Priorité}  & \retourLigne{1} \\ \hline
+    4 & \retourLigne{Antécédents}  & \retourLigne{obd01} \\ \hline
+    5 & \retourLigne{Format}  & \retourLigne{A} \\ \hline
+    6 & \retourLigne{Maquette}  & \retourLigne{1} \\ \hline
+	\end{longtable}
+
+\end{document}
