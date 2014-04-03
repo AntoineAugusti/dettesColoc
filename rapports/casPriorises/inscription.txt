@@ -7,20 +7,15 @@ skinparam shadowing false
 actor Visiteur as visiteur
 actor :Serveur mail: as mail
 
-rectangle application {
-	(Affichier formulaire) as afficher
+rectangle inscription {
+	(Afficher formulaire) as afficher
 	(Envoyer mail) as envoyer
 	(Vérifier adresse mail) as verifier
 	(Entrer code de vérification) as code
-	(Visiter l'url spécial de vérification) as url
+	(Visiter l'url spéciale de vérification) as url
 
 	code .> verifier : extends
 	url ..> verifier : extends
-
-	note right of modifierTaches
-		Exemple : indiquer qu'une tâche
-		ménagère a été effectuée.
-	end note
 
 	visiteur --> afficher
 	mail --> envoyer

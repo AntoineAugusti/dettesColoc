@@ -6,7 +6,7 @@ skinparam shadowing false
 
 actor Visiteur as visiteur
 
-rectangle application {
+rectangle connexion {
 	(Afficher formulaire) as afficher
 	(Afficher résultat) as resultat
 	(Afficher échec) as echec
