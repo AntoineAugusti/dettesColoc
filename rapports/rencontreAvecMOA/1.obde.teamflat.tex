@@ -1,0 +1,103 @@
+\documentclass[a4paper, 12pt, french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[babel=true]{csquotes}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xspace}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{geometry}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.75in}
+%% -- Commandes personalisées
+
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomProjet}{enflatme\xspace}
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomEquipe}{teamflat\xspace}
+
+\pagestyle{fancy}
+% En-têtes
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[C]{\nomProjet} 
+\fancyhead[L]{Compte-rendu de la réunion avec la MOA}
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[C]{Version 1.0} 
+\fancyfoot[L]{\nomEquipe\xspace G1}
+\fancyfoot[R]{Page \thepage\xspace sur \pageref{LastPage}}
+
+\newcommand{\retourLigne}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+%% -- Document
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\LARGE{\bsc{Compte-rendu de la réunion avec la MOA}} \\
+		    \rule{\linewidth}{1.5pt}
+		    \huge{\textbf{\nomProjet}}
+		    \rule{\linewidth}{1.5pt} \newline{} \newline{}
+		\end{center}
+		\begin{center}
+		    \large{Auteurs :}\\ Antoine \bsc{Augusti} (ANT)\\ Étienne \bsc{Batise} (BAT) \\ Thibaud \bsc{Dauce} (TIB)
+		\end{center}
+		\vspace{50px}
+		\begin{center}
+			\large{Date de publication :}\\ \today
+		\end{center}
+	\end{titlepage}
+	\newpage
+
+	\section{Cartouche}
+		\textbf{Objet de la réunion} : Lancement du projet obde de l'équipe bidideco le 28 mars 2014.
+		\paragraph{Participants}{
+			\begin{itemize}
+				\item Antoine Augusti, MOE, présent ;
+				\item Étienne Batise, MOE, présent ;
+				\item Mickaël Billiotte, MOA, présent ;
+				\item Anthony Courtin, MOA, présent ;
+				\item Thibaud Dauce, MOE, présent ;
+				\item Faustine Demiselle, MOA, présent ;
+				\item Quentin Diaferia, MOA, présent.
+			\end{itemize}
+		}
+		\vspace{20px}
+		Le compte-rendu de la réunion sera conversé par l'équipe MOE teamflat.
+	\section{Ordre du jour}
+		L'ordre du jour est le lancement du projet obde de l'équipe bidideco, maîtrise d’œuvre de ce projet. Cette réunion a pour but la présentation du projet obde par l'équipe bidideco. Cette présentation doit être suivie d'une séance de questions-réponses pour clarifier les points du cahier des charges pouvant porter à confusion.
+
+	\section{Compte-rendu}
+	\paragraph{Légende la colonne Nature :}{
+		\begin{itemize}
+			\item I : Information. Toute affirmation échangée pendant la réunion, sans nécessairement donner lieu à débat.
+			\item D : Décision. Toute affirmation qui a fait l'objet d'un débat et d'un accord, consensus de manière collégiale. 
+		\end{itemize}
+	}
+	\begin{longtable}{|l|l|}
+ 	\hline
+  	Nature & Texte \\ \hline
+  	\hline
+    I & \retourLigne{Les utilisateurs de l'application seront les organisateurs du BDE au sens large. Ceci n'est donc\\ pas réservé au seul Conseil d'Administration. Il y aura environ 60 utilisateurs.} \\ \hline
+    D & \retourLigne{Les utilisateurs auront une connaissance basique de l'informatique. Ils seront formés pendant\\ environ 10 minutes.} \\ \hline
+    D & \retourLigne{L'application sera disponible uniquement sur le système d'exploitation Android. Elle ne sera\\ pas distribuée sur le Play Store.} \\ \hline
+    I & \retourLigne{L'application doit pouvoir récupérer les informations des adhérents du BDE\footnote{BDE : Bureau des Élèves} qui sont\\ déjà dans une base de données.} \\ \hline
+    D & \retourLigne{L'inscription des utilisateurs se fera par un administrateur.} \\ \hline
+    D & \retourLigne{Il n'est pas possible de créer son compte soi-même.} \\ \hline
+    D & \retourLigne{Les utilisateurs doivent pouvoir voir les changements sur des documents sans avoir besoin\\ de recharger un élément.} \\ \hline
+    D & \retourLigne{Les modifications sur un document n'ont pas besoin d'avoir un affichage en temps réel.} \\ \hline
+    D & \retourLigne{Quand un autre utilisateur modifie actuellement le document que l'on est en train de consulter,\\ il faut l'indiquer.} \\ \hline
+    I & \retourLigne{L'application doit respecter la charte graphique en vigueur du BDE.} \\ \hline
+	\end{longtable}
+\end{document}
