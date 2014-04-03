@@ -60,41 +60,19 @@
 	\end{titlepage}
 	\newpage
 
-	\section{Ajouter Un membre}
-	\begin{longtable}{|c|l|l|}
+	\section{Liste des cas priorisés}
+	\begin{longtable}{|l|l|l|l|l|l|}
  	\hline
-    1 & \retourLigne{ID}  & \retourLigne{obd01} \\ \hline
-  	\hline
-    2 & \retourLigne{Titre}  & \retourLigne{Ajouter un membre} \\ \hline
-    3 & \retourLigne{Priorité}  & \retourLigne{1} \\ \hline
-    4 & \retourLigne{Antécédents}  & \retourLigne{} \\ \hline
-    5 & \retourLigne{Format}  & \retourLigne{A} \\ \hline
-    6 & \retourLigne{Maquette}  & \retourLigne{1} \\ \hline
-	\end{longtable}
-
-	\section{Supprimer un membre}
-	\begin{longtable}{|c|l|l|}
+ 	ID & Titre & Priorité & Antécédents & Format & Maquette \\ \hline
  	\hline
-    1 & \retourLigne{ID}  & \retourLigne{obd02} \\ \hline
-  	\hline
-    2 & \retourLigne{Titre}  & \retourLigne{Supprimer un membre} \\ \hline
-    3 & \retourLigne{Priorité}  & \retourLigne{1} \\ \hline
-    4 & \retourLigne{Antécédents}  & \retourLigne{obd01} \\ \hline
-    5 & \retourLigne{Format}  & \retourLigne{A} \\ \hline
-    6 & \retourLigne{Maquette}  & \retourLigne{1} \\ \hline
-	\end{longtable}
+	\retourLigne{obd01} & \retourLigne{Ajouter un membre} & \retourLigne{1} & \retourLigne{} & \retourLigne{A} & \retourLigne{1} \\
+	\retourLigne{obd02} & \retourLigne{Supprimer un membre} & \retourLigne{1} & \retourLigne{obd01} & \retourLigne{A} & \retourLigne{1} \\
+	\retourLigne{obd03} & \retourLigne{Connecter} & \retourLigne{1} & \retourLigne{obd01} & \retourLigne{A} & \retourLigne{1} \\
+	\retourLigne{obd04} & \retourLigne{Créer un événement} & \retourLigne{2} & \retourLigne{obd01, obd03} & \retourLigne{A} & \retourLigne{0} \\
+	\retourLigne{obd04} & \retourLigne{Organiser un événement} & \retourLigne{2} & \retourLigne{obd01, obd03, obd04} & \retourLigne{A} & \retourLigne{0} \\
 
-
-	\section{Connexion}
-	\begin{longtable}{|c|l|l|}
- 	\hline
-    1 & \retourLigne{ID}  & \retourLigne{obd03} \\ \hline
-  	\hline
-    2 & \retourLigne{Titre}  & \retourLigne{Connexion} \\ \hline
-    3 & \retourLigne{Priorité}  & \retourLigne{1} \\ \hline
-    4 & \retourLigne{Antécédents}  & \retourLigne{obd01} \\ \hline
-    5 & \retourLigne{Format}  & \retourLigne{A} \\ \hline
-    6 & \retourLigne{Maquette}  & \retourLigne{1} \\ \hline
+	\retourLigne{obd05} & \retourLigne{Rédiger un document} & \retourLigne{2} & \retourLigne{obd01, obd03} & \retourLigne{A} & \retourLigne{0} \\
+	\hline
 	\end{longtable}
 
 \end{document}
