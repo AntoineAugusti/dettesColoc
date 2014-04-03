@@ -1,5 +1,5 @@
 @startuml
-title Modèle d'usage\n <b>enflatme</b>
+title Modèle d'usage\n <b>obde</b>
 left to right direction
 skinparam packageStyle rect
 skinparam shadowing false
