@@ -20,7 +20,7 @@
 
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.75in}
-%% -- Commandes personalisées
+%% -- Commandes personnalisées
 
 % Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
 \newcommand{\nomProjet}{enflatme\xspace}
@@ -68,7 +68,9 @@ Se connecter à l'application
 Liste des actions pour la connexion d'un utilisateur à l'application 
 
 \section{Acteurs}
-* Utilisateur (U)
+\begin{itemize}
+	\item Utilisateur, noté U
+\end{itemize}
 
 \section{Pré-conditions}
 
@@ -76,10 +78,10 @@ Liste des actions pour la connexion d'un utilisateur à l'application
 	\item Le smart-phone est allumé
 	\item Le smart-phone possède l'application
 	\item Le compte de U a déjà été créé par l'administrateur du système. *Voir cas 1*
-	\item U a déjà rédifini son mot de passe.
+	\item U a déjà redéfini son mot de passe.
 \end{itemize}
 
-\section{Action départ}
+\section{Action de départ}
 \begin{itemize}
 	\item U souhaite se connecter à l'application
 \end{itemize}
@@ -91,7 +93,7 @@ Liste des actions pour la connexion d'un utilisateur à l'application
  	\hline
 	\retourLigne{1. U lance l'application} &   \\ \hline
 	& \retourLigne{2. Le système (S) demande le mot de passe à l'utilisateur} \\ \hline
-	\retourLigne{3. U saisi son mot de passe } & \retourLigne{4. S vérifie la validité du mot de passe} \\ \hline
+	\retourLigne{3. U saisit son mot de passe } & \retourLigne{4. S vérifie la validité du mot de passe} \\ \hline
 	& \retourLigne{5. S signale si le mot de passe n'est pas valide}  \\ \hline
 	& \retourLigne{6. S affiche la page d'accueil} \\
 	\hline
