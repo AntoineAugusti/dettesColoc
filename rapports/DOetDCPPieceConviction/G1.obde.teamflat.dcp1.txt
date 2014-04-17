@@ -1,0 +1,17 @@
+@startuml
+title DCP - Pièce à conviction "Santa Beach"\n MOA : <b>obde</b> / MOE : <b>teamflat</b>
+left to right direction
+skinparam shadowing false
+
+class "Evenement" as evenement
+class "CreneauHoraire" as creneau
+class "Lieu" as lieu
+class "Organisateur" as orga
+class "CreneauHoraireLieu" as creneauLieu
+
+creneau "1..*" -- "1..*" lieu
+(creneau, lieu) ... creneauLieu
+evenement "1..*" - "1..*" creneauLieu
+creneauLieu "0..*" - "0..*" orga
+
+@enduml
