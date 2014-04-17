@@ -11,8 +11,8 @@ class "Evenement" as evenement
 class "Demande" as demande
 
 evenement "0..*" -- "1" planning
-organisateur "1..0" -- "1" adherent
+orga "1..0" -- "1" adherent
 materiel "0..*" - "0..*" evenement
-organisateur "1" - "0..*" demande
+orga "1" - "0..*" demande
 
 @enduml
