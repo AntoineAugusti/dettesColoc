@@ -1,0 +1,18 @@
+@startuml
+title DCP - Cahier des charges\n MOA : <b>obde</b> / MOE : <b>teamflat</b>
+left to right direction
+skinparam shadowing false
+
+class "Planning" as planning
+class "Organisateur" as orga
+class "Adherent" as adherent
+class "Materiel" as materiel
+class "Evenement" as evenement
+class "Demande" as demande
+
+evenement "0..*" -- "1" planning
+organisateur "1..0" -- "1" adherent
+materiel "0..*" - "0..*" evenement
+organisateur "1" - "0..*" demande
+
+@enduml
