@@ -11,7 +11,7 @@ class "Evenement" as evenement
 class "Demande" as demande
 
 evenement "0..*" -- "1" planning
-orga "1..0" -- "1" adherent
+orga "0..1" -- "1" adherent
 demande "0..*" - "1" evenement
 orga "0..*" - "1" demande
 demande "1" - "0..*" materiel
