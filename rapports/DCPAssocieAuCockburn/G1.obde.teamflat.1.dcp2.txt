@@ -1,0 +1,11 @@
+@startuml
+title DCP - Issu du cas d'utilisation\n MOA : <b>obde</b> / MOE : <b>teamflat</b>
+left to right direction
+skinparam shadowing false
+
+class "Organisateur" as orga
+class "Permission" as permis
+
+orga "0..*" -- "1..*" permis
+
+@enduml
