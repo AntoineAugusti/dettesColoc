@@ -1,8 +1,7 @@
-DROP TABLE `permissions_organisateurs`;
+DROP TABLE IF EXISTS `permissions_organisateurs`;
 
 CREATE TABLE `permissions_organisateurs` (
   `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `id` mediumint,
   `id_organisateur` mediumint default NULL,
   `id_permission` mediumint default NULL,
   PRIMARY KEY (`id`)

@@ -1,8 +1,7 @@
-DROP TABLE `permissions`;
+DROP TABLE IF EXISTS `permissions`;
 
 CREATE TABLE `permissions` (
   `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `id` mediumint,
   `nom` TEXT default NULL,
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=1;
