@@ -8,7 +8,7 @@ INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (7,3
 INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (8,34,"Sacha","MSP61BQT3XJ");
 INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (9,36,"Rama","CJE82IAF9ZQ");
 INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (10,38,"Kim","BRD56OCW9VL");
-INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (11,40,"Cheyenne","ACN74UKQ4LA");
+INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (11,40,"Cheyennade","ACN74UKQ4LA");
 INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (12,42,"Ella","DLE01MHA6HA");
 INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (13,44,"Eaton","VVP10XMX1UN");
 INSERT INTO `organisateurs` (`id`,`idAdherent`,`login`,`motdepasse`) VALUES (14,46,"Kamal","XKQ22TTL4ZN");
