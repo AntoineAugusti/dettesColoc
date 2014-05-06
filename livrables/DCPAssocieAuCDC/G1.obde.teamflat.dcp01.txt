@@ -3,17 +3,28 @@ title DCP - Cahier des charges\n MOA : <b>obde</b> / MOE : <b>teamflat</b>
 left to right direction
 skinparam shadowing false
 
-class "Planning" as planning
-class "Organisateur" as orga
+class "Role" as role
 class "Adherent" as adherent
 class "Materiel" as materiel
+class "TypeMateriel" as type
 class "Evenement" as evenement
+class "Planning" as planning
+class "Tache" as tache
 class "Demande" as demande
+class "Question" as question
+class "SMSGroupe" as sms
 
-evenement "0..*" -- "1" planning
-orga "0..1" -- "1" adherent
+evenement "1" -- "0..1" planning
+evenement "1" -- "0..*" adherent
+tache "1..*" -- "1" planning
+tache "0..*" -- "0..*" adherent
+role "0..1" -- "0..*" adherent
+question "0..*" -- "1" adherent
+sms "1..*" -- "0..*" adherent
+role "0..*" -- "1" role
 demande "0..*" - "1" evenement
 orga "0..*" - "1" demande
+type "1" - "0..*" materiel
 demande "1" - "0..*" materiel
 
 @enduml
