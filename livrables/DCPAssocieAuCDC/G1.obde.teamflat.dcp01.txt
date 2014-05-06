@@ -21,7 +21,7 @@ tache "0..*" -- "0..*" adherent
 role "0..1" -- "0..*" adherent
 question "0..*" -- "1" adherent
 sms "1..*" -- "0..*" adherent
-role "0..*" -- "1" role
+role "0..*" -- "0..1" role : dirige
 demande "0..*" - "1" evenement
 adherent "0..*" - "1" demande
 type "1" - "0..*" materiel
