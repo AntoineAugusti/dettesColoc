@@ -1,14 +1,14 @@
 title Ajouter un Membre
-Administrateur->NouveauMembre;Membre: creer_membre()
-Administrateur->NouveauMembre;Membre: renseigner_nom()
-Administrateur->NouveauMembre;Membre: renseigner_mail()
-Administrateur->NouveauMembre;Membre: renseigner_tel()
-Administrateur->NouveauMembre;Membre: renseigner_grade()
+Administrateur->Système: creer_membre()
+Administrateur->Système: renseigner_nom()
+Administrateur->Système: renseigner_mail()
+Administrateur->Système: renseigner_tel()
+Administrateur->Système: renseigner_grade()
 
 
 
-Administrateur->+NouveauMembre;Membre: valider_creation()
-NouveauMembre;Membre-->-Administrateur: erreur
+Administrateur->+Système: valider_creation()
+Système-->-Administrateur: erreur
 
-NouveauMembre;Membre->Utilisateur: envoyer_mail_invitation()
+ServeurMessagerie->Utilisateur: envoyer_mail_invitation()
 
