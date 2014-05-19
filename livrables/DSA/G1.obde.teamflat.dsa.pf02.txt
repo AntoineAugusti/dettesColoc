@@ -1,0 +1,13 @@
+title Connexion
+
+Visiteur->Système: demandeConnexion()
+Système->Visiteur: afficherFormulaire()
+Visiteur->Système: envoyerIdentifiantEtMotDePasse()
+Système->Système: verifierMotDePasse(identifiant, motDePasse)
+
+alt succes
+    Système->Système:enregistrerConnexion(identifiant)
+    Système->Visiteur: afficherSucces()
+else echec
+    Système->Visiteur: afficherEchec()
+end

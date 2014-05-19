@@ -1,0 +1,7 @@
+title Supprimer un membre
+
+Administrateur->Système: demandeSuppressionMembre()
+Système->Administrateur: afficherListeMembres()
+Administrateur->Système: envoyerChoixMembre()
+Système->Système: supprimerMembre(idMembre)
+Système->Administrateur: afficherConfirmationSuppression()
