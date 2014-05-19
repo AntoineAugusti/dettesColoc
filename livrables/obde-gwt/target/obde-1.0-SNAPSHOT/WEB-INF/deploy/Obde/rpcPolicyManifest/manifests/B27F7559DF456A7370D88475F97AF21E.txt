@@ -1,0 +1,2 @@
+serviceClass: fr.insarouen.teamflat.client.GreetingService
+path: C69ECA74996A72E40A1E5057D4C2F191.gwt.rpc
