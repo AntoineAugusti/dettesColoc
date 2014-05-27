@@ -1,0 +1,89 @@
+\documentclass[a4paper, 12pt, french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[babel=true]{csquotes}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xspace}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{geometry}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.75in}
+%% -- Commandes personalisées
+
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomProjet}{enflatme\xspace}
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomEquipe}{teamflat\xspace}
+
+\pagestyle{fancy}
+% En-têtes
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[C]{\nomProjet} 
+\fancyhead[L]{Mode opératoire}
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[C]{Version 1.0} 
+\fancyfoot[L]{\nomEquipe\xspace G1}
+\fancyfoot[R]{Page \thepage\xspace sur \pageref{LastPage}}
+
+\newcommand{\retourLigne}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+%% -- Document
+\begin{document}
+	\begin{center}
+	    \rule{\linewidth}{1pt}
+		\LARGE{\bsc{Mode opératoire}}
+	    \rule{\linewidth}{1pt} \newline{} \newline{}
+	\end{center}
+	\begin{center}
+	    \large{Auteurs :}\\ Antoine \bsc{Augusti} (ANT)\\ Étienne \bsc{Batise} (BAT) \\ Thibaud \bsc{Dauce} (TIB)
+	\end{center}
+	\vspace{20px}
+	\begin{center}
+		\large{Date de publication :}\\ \today
+	\end{center}
+
+	\section{Préliminaires}
+	Il est nécessaire d'effectuer les étapes ci-dessous pour faire fonctionner l'application web et la base de données.
+	\begin{enumerate}
+		\item Récupérer notre archive de livrables \texttt{v1.0} à l'adresse \url{https://github.com/teamflat/enflatme/releases}
+		\item Dézipper cette archive
+	\end{enumerate}
+
+	\section{Lancement de l'application web en local}
+	\begin{enumerate}
+		\item Ouvrir un terminal et se rendre dans le dossier où l'archive a été dézippée
+		\item Se rendre dans le dossier \texttt{livrables/obde-gwt}
+		\item Lancer la commande \texttt{mvn gwt:run}
+		\item Ouvrir un navigateur web et se rendre à l'adresse \url{http://127.0.0.1:8888/Obde.html?gwt.codesvr=127.0.0.1:9997}
+		\item Si le plugin GWT est manquant dans le navigateur, l'installer.
+	\end{enumerate}
+
+	\section{Déploiement de l'application web}
+	\begin{enumerate}
+		\item Ouvrir un terminal et se rendre dans le dossier où l'archive a été dézippée
+		\item Se rendre dans le dossier \texttt{livrables/obde-gwt}
+		\item Lancer la commande \texttt{mvn gwt:redeploy}
+		\item L'application est disponible à l'adresse \url{http://casisbelli-dev.insa-rouen.fr/obde/}
+	\end{enumerate}
+
+	\section{Création de la base de données}
+	\begin{enumerate}
+		\item Ouvrir un terminal et se rendre dans le dossier où l'archive a été dézippée
+		\item Se rendre dans le dossier \texttt{livrables/requetesSQL}
+		\item Importer les fichiers SQL dans l'ordre suivant : \texttt{teamflat.ddl.sql} puis \texttt{teamflat.dml.sql}. Ceci peut être fait en ligne de commandes ou à l'aide de phpMyAdmin. La commande pour importer un fichier SQL dans une base de données MySQL est la suivante : \texttt{mysql -u UTILISATEUR -p -h localhost NOM-BASE < fichier.sql}.
+	\end{enumerate}
+
+\end{document}
