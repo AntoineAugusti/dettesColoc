@@ -1,0 +1,92 @@
+% L'option handout permet de supprimer la barre de navigation
+\documentclass[handout]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+% Pour pouvoir insérer des images
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{images/}
+% Gestion des couleurs
+\usepackage{color}
+\definecolor{red}{RGB}{231, 76, 60}
+
+% Un joli thème flat
+\usetheme{Rochester}
+
+% Personnalisation du thème
+\usecolortheme[named=red]{structure}
+% Numéro de slides dans le footer
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{blocks}[shadow=false]
+
+\newcommand{\intervalleoo}[2]{\mathopen{]}#1\,;#2\mathclose{[}}
+\newcommand{\intervalleff}[2]{\mathopen{[}#1\,;#2\mathclose{]}}
+\newcommand{\intervalleof}[2]{\mathopen{]}#1\,;#2\mathclose{]}}
+\newcommand{\intervallefo}[2]{\mathopen{[}#1\,;#2\mathclose{[}}
+\newcommand{\intervalle}[2]{\mathopen{(}#1\,;#2\mathclose{)}}
+
+% ------------------------------------ %
+% -- METADONNÉES DU DOCUMENT --------- %
+\title{
+	Projet OBDE\\
+}
+\author{
+	Équipe MOA : Mickael Billiotte, Anthony Courtin, Quentin Diaferia, Faustine Demiselle\\
+	\vspace{10px}
+	Équipe MOE : Antoine Augusti, Étienne Batise,  Thibaud Dauce
+}
+\date{2 juin 2014}
+
+% Générer une page de titre à chaque début de section
+\AtBeginSection[]
+{
+	\begin{frame}[plain]
+	\frametitle{Sommaire}
+	\tableofcontents[currentsection, hideothersubsections]
+	\end{frame}
+}
+
+% Début du document
+\begin{document}
+
+	% Génération de la page de titre
+	\begin{frame}[plain]
+		\titlepage
+	\end{frame}
+
+	% Génération du sommaire
+	\begin{frame}[plain]
+		\frametitle{Sommaire}
+		\tableofcontents
+	\end{frame}
+
+
+	% //////////////////////////////// %
+	% /// Présentation /////////////// %
+	% \section{Présentation}
+
+	% 	%
+	% 	%% Origine
+	% 	%
+	% 	\subsection{Origine}
+	% 	\begin{frame}
+	% 		\frametitle{Origine}
+
+	% 		Création :
+	% 		\begin{itemize}
+	% 			\item Proposé par Quenouille dans les années 50 pour le calcul de biais
+	% 			\item Repris par Tuckey pour l'estimation de la variance, tester une hypothèse ou établir un intervalle de confiance
+	% 		\end{itemize}
+
+
+	% 		\vspace{20px}
+
+	% 		\begin{exampleblock}{Que signifie Jackknife ?}
+	% 			Jackknife signifie en anglais couteau suisse. Cet outil a été nommé ainsi car, comme l'objet, c'est un outil pratique et rapide pouvant remplacer des outils plus sophistiqués et compliqués.
+	% 		\end{exampleblock}
+	% 	\end{frame}
+
+% Fin du document
+\end{document}
