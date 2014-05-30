@@ -1,0 +1,65 @@
+\documentclass[a4paper, 12pt, french]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[babel=true]{csquotes}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xspace}
+\usepackage{float}
+\usepackage{geometry}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.75in}
+%% -- Commandes personalisées
+
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomProjet}{enflatme\xspace}
+% Contrainte : chaîne de caractères sans espace, en minuscule, constituée seulement des 26 caractères non accentués de l’alphabet latin
+\newcommand{\nomEquipe}{teamflat\xspace}
+
+\pagestyle{fancy}
+% En-têtes
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[C]{} 
+\fancyhead[L]{}
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[C]{} 
+\fancyfoot[L]{}
+\fancyfoot[R]{}
+
+%% -- Document
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+		    \rule{\linewidth}{1.5pt}
+			\LARGE{\textbf{Équipe MOA - teamflat}}
+		    \rule{\linewidth}{1.5pt} \newline{} \newline{}
+		    \huge{\bsc{Projet \nomProjet}}
+		\end{center}
+		\begin{center}
+		    \large{Membres :}\\ Antoine \bsc{Augusti}\\ Étienne \bsc{Batise} \\ Thibaud \bsc{Dauce}
+		\end{center}
+		\vspace{50px}
+		\begin{center}
+		    \rule{\linewidth}{1.5pt}
+			\LARGE{\textbf{Équipe MOE - bidideco}}
+		    \rule{\linewidth}{1.5pt} \newline{} \newline{}
+		    \huge{\bsc{Projet obde}}
+		\end{center}
+		\begin{center}
+		    \large{Membres :}\\ Mickael \bsc{Billiotte} \\ Anthony \bsc{Courtin} \\ Faustine \bsc{Demiselle} \\ Quentin \bsc{Diaferia}
+		\end{center}
+	\end{titlepage}
+	\newpage
+\end{document}
