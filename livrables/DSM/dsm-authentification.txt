@@ -1,0 +1,14 @@
+title Séquence d'authentification
+
+
+Utilisateur->loginField: renseigne son nom de compte
+
+Utilisateur->passwordField: renseigne son mdp
+
+Utilisateur->+sendButton: clic
+
+sendButton->-Serveur: sendNameToServer()
+
+Serveur-->-Navigateur: reponse
+
+
