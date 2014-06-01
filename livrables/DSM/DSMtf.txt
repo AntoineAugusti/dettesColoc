@@ -1,0 +1,61 @@
+@startuml
+
+hide footbox
+
+actor Utilisateur
+
+Utilisateur->Application: clic
+activate Application
+
+Application->sendButton: Evt clic
+activate sendButton
+
+create GreetingService
+GWT->GreetingService: new
+
+sendButton->handler: onClic()
+activate handler
+
+handler->handler: sendNameToServer
+activate handler
+
+handler->loginField: getText()
+activate loginField
+deactivate loginField
+deactivate sendButton
+
+handler->passwordField: getText()
+activate passwordField
+deactivate passwordField
+deactivate sendButton
+
+handler->texteToServerLabel: setText()
+activate texteToServerLabel
+deactivate texteToServerLabel
+
+handler->greetingService: textToServer
+activate greetingService
+
+greetingService->GWT: Relayer textToServer
+activate GWT
+deactivate greetingService
+
+GWT->GreetingService:textToServer
+activate GreetingService
+deactivate GreetingService
+
+GWT->handlerasync:onSucess
+deactivate GWT
+
+handlerasync->dialogBox: setText
+activate dialogBox
+deactivate dialogBox
+deactivate handler
+deactivate handler
+
+handlerasync->ServerResponseLabel: setHTML
+activate ServerResponseLabel
+deactivate ServerResponseLabel
+deactivate Application
+
+@enduml
