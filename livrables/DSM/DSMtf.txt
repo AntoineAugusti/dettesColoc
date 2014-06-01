@@ -48,7 +48,7 @@ GWT->GreetingService:textToServer
 activate GreetingService
 deactivate GreetingService
 
-GWT->handlerasync:onSucess
+GWT->handlerasync:onSuccess
 deactivate GWT
 
 handlerasync->dialogBox: setText
