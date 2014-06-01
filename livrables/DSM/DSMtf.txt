@@ -20,14 +20,18 @@ handler->handler: sendNameToServer
 activate handler
 
 handler->loginField: getText()
-activate loginField
 deactivate loginField
 deactivate sendButton
 
 handler->passwordField: getText()
-activate passwordField
 deactivate passwordField
 deactivate sendButton
+
+handler->u: new Instance
+activate u
+
+u-> handler: credentialsAreValid
+deactivate u
 
 handler->texteToServerLabel: setText()
 activate texteToServerLabel
